@@ -1,0 +1,26 @@
+
+# nota_5.py
+def calcular_promedio():
+    print("¡Bienvenido a la calculadora de notas!\n")
+    
+    notas = []
+    cantidad = int(input("¿Cuántas notas quieres ingresar? "))
+    
+    for i in range(cantidad):
+        while True:
+            try:
+                nota = float(input(f"Ingresa la nota {i+1}: "))
+                if 0 <= nota <= 10:
+                    notas.append(nota)
+                    break
+                else:
+                    print("La nota debe estar entre 0 y 10.")
+            except ValueError:
+                print("Debes ingresar un número válido.")
+    
+    promedio = sum(notas) / len(notas)
+    print(f"\nEl promedio de tus notas es: {promedio:.2f}")
+
+# Ejecutar la función
+if __name__ == "__main__":
+    calcular_promedio()
